@@ -1,0 +1,15 @@
+<preface id="preface" xreflabel="preface">
+<title>Preface</title>
+
+<para>
+The blender Roll installs Blender v.2.74 form a binary distribution in /opt/blender.
+Blender is the free and open source 3D creation suite.
+</para>
+
+<para>
+Please visit the <ulink url="http://www.blender.org/about">blender
+site</ulink> to learn more about their release and the individual
+software components.
+</para>
+
+</preface>

@@ -1,10 +1,7 @@
 <chapter id="using" xreflabel="Using the blender Roll">
 
 
-<title>Using the blender Roll</title>
-
-<section id="using-blender" xreflabel="Using the blender roll">
-<title>Using the blender Roll</title>
+<title>Using the Blender Roll</title>
 
 <para>
 Tutorials for using blender and its components are available
@@ -12,11 +9,9 @@ from the <ulink url="/http://www.blender.org/">blender web site</ulink>
 </para>
 
 <para>
-When using blender make sure that python v.2.7 or higher is available
+When using blender make sure that python 2.7 or higher is available
 and is included in your $PATH.
 </para>
-
-</section>
 
 
 </chapter>

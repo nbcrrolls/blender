@@ -10,7 +10,7 @@
 <book>
 <bookinfo>
 
-	<title> blender Roll: Users Guide </title>
+	<title> Blender Roll: Users Guide </title>
 
 	<subtitle>
 		<inlinemediaobject>
@@ -20,12 +20,12 @@
 		</inlinemediaobject>
 	</subtitle>
 
-	<edition>&document-version;</edition>
+	<edition>Version @ROCKS_VERSION@</edition>
 
-	<pubdate>&document-pubdate;</pubdate>
+	<pubdate>@PUBDATE@</pubdate>
 
 	<copyright id="copyright" xreflabel="copyright">
-		<year>&document-year;</year>
+		<year>@YEAR@</year>
 		<holder>The copyright holder, and UC Regents</holder>
 	</copyright>
 

@@ -2,7 +2,7 @@
 <title>Preface</title>
 
 <para>
-The blender Roll installs Blender v.2.74 form a binary distribution in /opt/blender.
+The Blender Roll installs Blender v.@BLENDERVER@ from a binary distribution in /opt/blender.
 Blender is the free and open source 3D creation suite.
 </para>
 

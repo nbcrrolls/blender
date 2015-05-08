@@ -55,17 +55,35 @@
 #
 # $Log$
 
-PKGROOT         = /var/www/html/roll-documentation/blender/$(VERSION)
+
 REDHAT.ROOT     = $(PWD)/../../
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
 
-default: $(NAME).spec ../$(NAME)-$(VERSION).tar.gz
+SGMLS = index.sgml preface.sgml
 
-html: predoc
+SEDSPEC += \
+        -e 's%@PUBDATE@%$(PUBDATE)%g' \
+        -e 's%@BLENDERVER@%$(BLENDERVER)%g' \
+        -e 's%@YEAR@%$(YEAR)%g' \
+        -e 's%@ROCKS_VERSION@%$(ROCKS_VERSION)%g'
+
+pretar:: $(VERSION.MK.INCLUDE)
+
+$(VERSION.MK.INCLUDE): 
+	if [ -f $(VERSION.MK.MASTER.DIR)/$(VERSION.MK.MASTER) ]; then \
+		/bin/cp $(VERSION.MK.MASTER.DIR)/$(VERSION.MK.MASTER) $@; \
+	fi
+
+%: %.in
+	$(SED) $(SEDSPEC) $^ > $@
+
+default: $(NAME).spec 
+
+html: $(SGMLS) predoc
 	jw --backend html --dsl $(PWD)/rocks.dsl#html index.sgml 
 
-pdf: predoc
+pdf: $(SGMLS) predoc
 	jw --backend pdf --dsl $(PWD)/rocks.dsl#print index.sgml
 
 build: html pdf
@@ -83,5 +101,6 @@ install:: build
 clean::
 	rm -f *.html
 	rm -f index.pdf
-
+	rm -rf $(VERSION.MK.INCLUDE)
+	rm -rf $(SGMLS)
 

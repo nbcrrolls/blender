@@ -1,9 +1,5 @@
 <chapter id="copyrights" xreflabel="Copyrights">
 
-
-<title>Copyrights</title>
-
-<section id="blender-copyright" xreflabel="blender">
 <title>Blender License and Copyright</title>
 
 <para>
@@ -11,7 +7,5 @@ Blender is free to use for any purpose, including commercially or for education.
 This freedom is being defined by Blender's <ulink url="http://www.blender.org/about/license/">
 GNU General Public License (GPL)</ulink>.
 </para>
-
-</section>
 
 </chapter>

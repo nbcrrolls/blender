@@ -1,5 +1,12 @@
+
+VERSION.MK.MASTER = version.mk
+VERSION.MK.MASTER.DIR = ..
+VERSION.MK.INCLUDE = blender.version.mk
+include $(VERSION.MK.INCLUDE)
+
+RPM.ARCH                = noarch
+
 ROLL			= blender
-VERSION			= 2.74
 NAME    		= roll-$(ROLL)-usersguide
 RELEASE			= 0
 
@@ -10,4 +17,5 @@ SUMMARY_ARCHITECTURE	= x86_64
 ROLL_REQUIRES		= base kernel os python
 ROLL_CONFLICTS		=
 
-RPM.ARCH                = noarch
+PKGROOT 		= /var/www/html/roll-documentation/blender/$(VERSION)
+

@@ -1,0 +1,67 @@
+<appConfig xmlns="http://nbcr.sdsc.edu/opal/types"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata appName="Blender @BLENDERVER@">
+    <usage><![CDATA[Use Blender to do batch rendering. Blender version @BLENDERVER@.]]></usage>
+    <info>
+    <![CDATA[blender -b inputFile -t 1 -x 1 -o output//frameName -s FrameStart -e FrameEnd -a
+
+-b        - Batch job
+inputFile - blender input file
+-t 1      - Use number of threads for rendering
+-x 1      - Set option to add the file extension to the end of the file
+-o        - Place output in the output/ directory and use frameName for naming frames 
+-s        - Set start to frame FrameStart (int)
+-e        - Set end to frame FrameEnd (int)
+-a        - Render frames from start to end (inclusive)
+    ]]></info>
+
+    <types>
+          <!-- list of flags -->
+      <flags>
+      </flags>
+      <!-- list of tagged parameters -->
+      <taggedParams>
+        <param>
+          <id>framename</id>
+          <tag>-o</tag>
+          <paramType>STRING</paramType>
+          <required>true</required>
+          <semanticType>FRAME</semanticType>
+          <textDesc>Output frames name prefix</textDesc>
+        </param>
+        <param>
+          <id>startFrame</id>
+          <tag>-s</tag>
+          <paramType>INT</paramType>
+          <required>true</required>
+          <default>1</default>
+          <textDesc>Start frame (int)</textDesc>
+        </param>
+        <param>
+          <id>endFrame</id>
+          <tag>-e</tag>
+          <paramType>INT</paramType>
+          <required>true</required>
+          <default>5</default>
+          <textDesc>End frame (int)</textDesc>
+        </param>
+      </taggedParams>
+
+      <!-- list of implicit parameters -->
+      <untaggedParams>
+        <param>
+          <id>inputfile</id>
+          <ioType>INPUT</ioType>
+          <paramType>FILE</paramType>
+          <required>true</required>
+          <semanticType>blender</semanticType>
+          <textDesc>Input blender file</textDesc>
+        </param>
+      </untaggedParams>
+
+    </types>
+  </metadata>
+  <binaryLocation>/opt/cadd/bin/render.py</binaryLocation>
+  <parallel>false</parallel>
+</appConfig>
+

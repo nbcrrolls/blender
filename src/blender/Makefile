@@ -10,7 +10,12 @@ REDHAT.ROOT = $(CURDIR)/../../
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
 
-SOURCE_PKG = $(NAME)-$(VERSION)-$(EXTENDED)-$(ARCH)
+pretar:: $(VERSION.MK.INCLUDE)
+
+$(VERSION.MK.INCLUDE): 
+	if [ -f $(VERSION.MK.MASTER.DIR)/$(VERSION.MK.MASTER) ]; then \
+		/bin/cp $(VERSION.MK.MASTER.DIR)/$(VERSION.MK.MASTER) $@; \
+	fi
 
 build:
 	echo "Using $(SOURCE_PKG) distro"
@@ -21,3 +26,4 @@ install::
 
 clean::
 	rm -rf $(SOURCE_PKG)
+	rm -rf $(VERSION.MK.INCLUDE)

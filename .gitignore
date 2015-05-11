@@ -10,6 +10,7 @@ _os
 _arch
 _distribution
 .rpmmacros
+python.mk
 
 # ignore version, rules files
 Rules-*.mk
@@ -17,4 +18,5 @@ Rules.mk
 Rolls.mk
 roll*.mk
 rocks-*.mk
+roll-blender.*
 

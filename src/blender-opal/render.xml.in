@@ -16,18 +16,21 @@ inputFile - blender input file
     ]]></info>
 
     <types>
-          <!-- list of flags -->
+
+      <!-- list of flags -->
       <flags>
       </flags>
+
       <!-- list of tagged parameters -->
       <taggedParams>
         <param>
-          <id>framename</id>
+          <id>frameName</id>
           <tag>-o</tag>
           <paramType>STRING</paramType>
           <required>true</required>
+          <default>frame</default>
           <semanticType>FRAME</semanticType>
-          <textDesc>Output frames name prefix</textDesc>
+          <textDesc>Output frame files name prefix</textDesc>
         </param>
         <param>
           <id>startFrame</id>
@@ -45,23 +48,44 @@ inputFile - blender input file
           <default>5</default>
           <textDesc>End frame (int)</textDesc>
         </param>
-      </taggedParams>
-
-      <!-- list of implicit parameters -->
-      <untaggedParams>
         <param>
-          <id>inputfile</id>
+          <id>inputFile</id>
+          <tag>-f</tag>
           <ioType>INPUT</ioType>
           <paramType>FILE</paramType>
           <required>true</required>
           <semanticType>blender</semanticType>
           <textDesc>Input blender file</textDesc>
         </param>
+      </taggedParams>
+
+      <!-- list of implicit parameters -->
+      <untaggedParams>
       </untaggedParams>
 
+      <!-- grouping of parameters -->
+      <groups>
+        <group>
+          <name>input</name>
+          <elements>inputFile startFrame endFrame</elements>
+          <required>true</required>
+          <textDesc>Input</textDesc>
+        </group>
+        <group>
+          <name>output</name>
+          <elements>frameName</elements>
+          <required>true</required>
+          <textDesc>Output</textDesc>
+        </group>
+      </groups>
+
     </types>
+
   </metadata>
-  <binaryLocation>/opt/cadd/bin/render.py</binaryLocation>
+
+  <binaryLocation>/opt/blender/bin/render.py</binaryLocation>
   <parallel>false</parallel>
+  <jobManagerFQCN>edu.sdsc.nbcr.opal.manager.ForkJobManager</jobManagerFQCN>
+
 </appConfig>
 

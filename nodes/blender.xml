@@ -17,7 +17,7 @@
 	</changelog>
 
 	<package>blender</package>
+	<package cond="opal_server">blender-opal</package>
 	<package cond="appliance == 'frontend'">roll-blender-usersguide</package>
-
 
 </kickstart>

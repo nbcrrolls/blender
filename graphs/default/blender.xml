@@ -18,12 +18,17 @@
 	</changelog>
 
 	<!-- add edges here -->
-	<edge from="server">
-		<to>blender</to>
-	</edge>
+	<edge from="server" to="blender"/>
+	<edge from="client" to="blender"/>
 
-	<edge from="client">
-		<to>blender</to>
-	</edge>
+	<!-- opal deployment
+	<edge from="client" to="blender-opal" cond="opal_server"/>
+	<edge from="server" to="blender-opal"/>
+
+	<order head="opal-common">
+		<tail>blender-opal</tail>
+	</order>
+	     -->
+
 
 </graph>

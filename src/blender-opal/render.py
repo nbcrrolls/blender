@@ -293,7 +293,7 @@ class Blender:
         subtxt += "#$ -t 1-%d\n\n" % self.tasks
         subtxt += 'let FRAME=$SGE_TASK_ID+%d\n' % self.skip
         subtxt += "input=%s\n\n" % self.fname 
-        subtxt += "/opt/blender/blender -b $input -t 1 -x 1 -o output//%s -s $FRAME -e $FRAME -a\n\n" % self.outframe
+        subtxt += "/opt/blender/blender -b $input -t 1 -x 1 -o output//%s -s $FRAME -e $FRAME -noaudio -a\n\n" % self.outframe
 
         self.writeFile(self.sgesub, subtxt)
 

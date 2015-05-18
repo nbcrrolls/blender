@@ -13,6 +13,7 @@ SOURCE_PKG = $(NAME)-$(VERSION)-$(EXTENDED)-$(ARCH)
 RELEASE 	= 0
 TARBALL_POSTFIX	= tar.bz2
 
-RPM.EXTRAS = AutoReq:No
+RPM.EXTRAS  = %define __os_install_post /usr/lib/rpm/brp-compress \\n%define __strip /bin/false
+RPM.EXTRAS += "\nAutoReq:No"
 
 

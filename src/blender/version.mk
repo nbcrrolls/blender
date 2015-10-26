@@ -14,6 +14,4 @@ RELEASE 	= 0
 TARBALL_POSTFIX	= tar.bz2
 
 RPM.EXTRAS  = %define __os_install_post /usr/lib/rpm/brp-compress \\n%define __strip /bin/false
-RPM.EXTRAS += "\nAutoReq:No"
-
-
+RPM.EXTRAS += "\\nAutoReq:No"

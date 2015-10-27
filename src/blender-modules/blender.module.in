@@ -1,0 +1,6 @@
+#%Module1.0
+module-whatis "blender"
+module-whatis "Version: @VERSION@"
+prepend-path PATH @BLENDERDIR@
+prepend-path LD_LIBRARY_PATH @BLENDERDIR@/lib
+

@@ -61,3 +61,6 @@
 include Rolls.mk
 
 default: roll
+
+clean:: 
+	/bin/rm -f _arch bootstrap.py

@@ -18,6 +18,7 @@
 
 	<package>blender</package>
 	<package>blender-module</package>
+	<package>libXxf86vm</package>
 	<package cond="opal_server">blender-opal</package>
 	<package cond="appliance == 'frontend'">roll-blender-usersguide</package>
 
